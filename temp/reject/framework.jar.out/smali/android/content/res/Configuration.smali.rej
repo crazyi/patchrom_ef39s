@@ -1,0 +1,113 @@
+*** Configuration.smali	2012-10-01 10:39:18.855303681 +0800
+--- Configuration.smali	2012-10-01 10:40:45.091300734 +0800
+***************
+*** 793,798 ****
+      or-int/lit16 v0, v0, 0x800
+  
+      :cond_10
+      return v0
+  .end method
+  
+--- 835,850 ----
+      or-int/lit16 v0, v0, 0x800
+  
+      :cond_10
++     iget-object v1, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Lmiui/content/res/ExtraConfiguration;->diff(Lmiui/content/res/ExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  .end method
+  
+***************
+*** 1409,1414 ****
+  
+      iput v1, p0, Landroid/content/res/Configuration;->seq:I
+  
+      return-void
+  .end method
+  
+--- 1479,1488 ----
+  
+      iput v1, p0, Landroid/content/res/Configuration;->seq:I
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     invoke-virtual {v0}, Lmiui/content/res/ExtraConfiguration;->setToDefaults()V
++ 
+      return-void
+  .end method
+  
+***************
+*** 1703,1708 ****
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+  
+      :cond_0
+      const/16 v1, 0x7d
+  
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+--- 1777,1790 ----
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+  
+      :cond_0
++     iget-object v1, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     invoke-virtual {v1}, Lmiui/content/res/ExtraConfiguration;->toString()Ljava/lang/String;
++ 
++     move-result-object v1
++ 
++     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++ 
+      const/16 v1, 0x7d
+  
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+***************
+*** 2510,2515 ****
+      iput v1, p0, Landroid/content/res/Configuration;->seq:I
+  
+      :cond_17
+      return v0
+  
+      :cond_18
+--- 2592,2607 ----
+      iput v1, p0, Landroid/content/res/Configuration;->seq:I
+  
+      :cond_17
++     iget-object v1, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Lmiui/content/res/ExtraConfiguration;->updateFrom(Lmiui/content/res/ExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  
+      :cond_18
+***************
+*** 2622,2627 ****
+  
+      invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+  
+      return-void
+  
+      :cond_0
+--- 2714,2723 ----
+  
+      invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
++ 
++     invoke-virtual {v0, p1, p2}, Lmiui/content/res/ExtraConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
++ 
+      return-void
+  
+      :cond_0

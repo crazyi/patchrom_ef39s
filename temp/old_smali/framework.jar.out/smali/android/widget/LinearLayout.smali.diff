@@ -1,0 +1,21 @@
+*** ./smali/android/widget/LinearLayout.smali	2012-10-01 10:39:08.883304025 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/widget/LinearLayout.smali	2012-10-01 10:40:30.563301228 +0800
+***************
+*** 581,587 ****
+  
+      iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+  
+!     sub-int v3, v6, v7
+  
+      .local v3, left:I
+      invoke-virtual {p0, p1, v3}, Landroid/widget/LinearLayout;->drawVerticalDivider(Landroid/graphics/Canvas;I)V
+--- 581,589 ----
+  
+      iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+  
+!     sub-int/2addr v6, v7
+! 
+!     add-int/lit8 v3, v6, -0x1
+  
+      .local v3, left:I
+      invoke-virtual {p0, p1, v3}, Landroid/widget/LinearLayout;->drawVerticalDivider(Landroid/graphics/Canvas;I)V

@@ -1,0 +1,24 @@
+*** ./smali/android/content/pm/PackageManager.smali	2012-10-01 10:39:20.267303631 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/content/pm/PackageManager.smali	2012-10-01 10:40:47.075300663 +0800
+***************
+*** 14,19 ****
+--- 14,21 ----
+  # static fields
+  .field public static final ACTION_CLEAN_EXTERNAL_STORAGE:Ljava/lang/String; = "android.content.pm.CLEAN_EXTERNAL_STORAGE"
+  
++ .field public static final COMPONENT_ENABLED_STATE_ACCESS_CONTROL:I = -0x80000000
++ 
+  .field public static final COMPONENT_ENABLED_STATE_DEFAULT:I = 0x0
+  
+  .field public static final COMPONENT_ENABLED_STATE_DISABLED:I = 0x2
+***************
+*** 272,277 ****
+--- 274,281 ----
+  
+  .field public static final VERIFICATION_REJECT:I = -0x1
+  
++ .field public static final HAS_ACTIVITY:I = 0x20000
++ 
+  
+  # direct methods
+  .method public constructor <init>()V

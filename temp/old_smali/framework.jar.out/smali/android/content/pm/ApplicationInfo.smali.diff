@@ -1,0 +1,13 @@
+*** ./smali/android/content/pm/ApplicationInfo.smali	2012-10-01 10:39:20.047303641 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/content/pm/ApplicationInfo.smali	2012-10-01 10:40:46.779300673 +0800
+***************
+*** 26,31 ****
+--- 26,33 ----
+      .end annotation
+  .end field
+  
++ .field public static final FLAG_ACCESS_CONTROL_PASSWORD:I = -0x80000000
++ 
+  .field public static final FLAG_ALLOW_BACKUP:I = 0x8000
+  
+  .field public static final FLAG_ALLOW_CLEAR_USER_DATA:I = 0x40

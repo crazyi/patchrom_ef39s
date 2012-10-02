@@ -1,0 +1,19 @@
+*** ./smali/android/widget/Toast$TN.smali	2012-10-01 10:39:08.783304027 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/widget/Toast$TN.smali	2012-10-01 10:40:30.423301233 +0800
+***************
+*** 335,337 ****
+--- 335,347 ----
+  
+      return-void
+  .end method
++ 
++ .method static synthetic access$000(Landroid/widget/Toast$TN;)Landroid/view/WindowManager$LayoutParams;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
++ 
++     return-object v0
++ .end method
+\ 文件尾没有 newline 字符

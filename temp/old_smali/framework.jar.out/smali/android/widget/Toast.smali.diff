@@ -1,0 +1,29 @@
+*** ./smali/android/widget/Toast.smali	2012-10-01 10:39:06.571304101 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/widget/Toast.smali	2012-10-01 10:40:26.563301366 +0800
+***************
+*** 429,431 ****
+--- 429,451 ----
+  
+      goto :goto_0
+  .end method
++ 
++ .method public setType(I)V
++     .locals 1
++     .parameter "type"
++     .annotation build Landroid/annotation/MiuiHook;
++         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
++     .end annotation
++ 
++     .prologue
++     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
++ 
++     #getter for: Landroid/widget/Toast$TN;->mParams:Landroid/view/WindowManager$LayoutParams;
++     invoke-static {v0}, Landroid/widget/Toast$TN;->access$000(Landroid/widget/Toast$TN;)Landroid/view/WindowManager$LayoutParams;
++ 
++     move-result-object v0
++ 
++     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
++ 
++     return-void
++ .end method
+\ 文件尾没有 newline 字符

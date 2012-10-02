@@ -1,0 +1,15 @@
+*** ./smali/com/android/internal/telephony/gsm/GSMPhone.smali	2012-10-01 10:38:50.519304651 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/com/android/internal/telephony/gsm/GSMPhone.smali	2012-10-01 10:40:04.743302112 +0800
+***************
+*** 1295,1300 ****
+--- 1295,1304 ----
+      .end annotation
+  
+      .prologue
++     const/16 v0, 0xf
++ 
++     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->removeMessages(I)V
++ 
+      iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCT:Lcom/android/internal/telephony/gsm/GsmCallTracker;
+  
+      invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->acceptCall()V

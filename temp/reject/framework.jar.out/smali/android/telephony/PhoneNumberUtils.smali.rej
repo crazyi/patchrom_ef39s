@@ -1,0 +1,19 @@
+*** PhoneNumberUtils.smali	2012-10-01 10:39:13.543303863 +0800
+--- PhoneNumberUtils.smali	2012-10-01 10:40:38.059300971 +0800
+***************
+*** 5490,5496 ****
+      if-eq v0, v4, :cond_1
+  
+      :cond_0
+!     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->isISODigit(C)Z
+  
+      move-result v4
+  
+--- 5496,5502 ----
+      if-eq v0, v4, :cond_1
+  
+      :cond_0
+!     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->isNonSeparator(C)Z
+  
+      move-result v4
+  

@@ -1,0 +1,26 @@
+*** ./smali/com/android/server/pm/Settings.smali	2012-10-01 10:39:57.291302368 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/services.jar.out/./smali/com/android/server/pm/Settings.smali	2012-10-01 10:41:28.803299237 +0800
+***************
+*** 2516,2524 ****
+--- 2516,2536 ----
+      move-result v3
+  
+      iput v3, v2, Lcom/android/server/pm/PackageSettingBase;->enabled:I
++ 
++     iget v3, v2, Lcom/android/server/pm/PackageSettingBase;->enabled:I
++ 
++     const/4 v5, 0x2
++ 
++     if-ne v3, v5, :cond_20
++ 
++     const/4 v3, 0x0
++ 
++     iput v3, v2, Lcom/android/server/pm/PackageSettingBase;->enabled:I
++ 
+      :try_end_b
+      .catch Ljava/lang/NumberFormatException; {:try_start_b .. :try_end_b} :catch_1
+  
++     :cond_20
+      :goto_7
+      const/4 v3, 0x0
+  

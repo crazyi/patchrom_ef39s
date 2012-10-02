@@ -1,0 +1,19 @@
+*** ./smali/android/os/Vibrator.smali	2012-10-01 10:39:43.747302830 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/os/Vibrator.smali	2012-10-01 10:41:13.407299764 +0800
+***************
+*** 214,216 ****
+--- 214,227 ----
+  
+      throw v1
+  .end method
++ 
++ .method public vibrateEx([B)V
++     .locals 0
++     .parameter "params"
++     .annotation build Landroid/annotation/MiuiHook;
++         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
++     .end annotation
++ 
++     .prologue
++     return-void
++ .end method

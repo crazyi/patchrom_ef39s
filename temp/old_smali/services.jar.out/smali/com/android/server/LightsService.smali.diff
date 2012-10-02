@@ -1,0 +1,19 @@
+*** ./smali/com/android/server/LightsService.smali	2012-10-01 10:39:56.819302384 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/services.jar.out/./smali/com/android/server/LightsService.smali	2012-10-01 10:41:28.263299254 +0800
+***************
+*** 52,58 ****
+  
+  .field private final mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
+  
+! .field private final mLights:[Lcom/android/server/LightsService$Light;
+  
+  .field private mNativePointer:I
+  
+--- 52,58 ----
+  
+  .field private final mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
+  
+! .field final mLights:[Lcom/android/server/LightsService$Light;
+  
+  .field private mNativePointer:I
+  

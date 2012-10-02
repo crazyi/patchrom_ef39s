@@ -1,0 +1,93 @@
+*** MediaFile.smali	2012-10-01 10:39:41.407302910 +0800
+--- MediaFile.smali	2012-10-01 10:41:10.679299857 +0800
+***************
+*** 294,300 ****
+  
+      invoke-static {v0, v1, v2, v3}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;I)V
+  
+!     :cond_0
+      const-string v0, "OGG"
+  
+      const/4 v1, 0x7
+--- 296,302 ----
+  
+      invoke-static {v0, v1, v2, v3}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;I)V
+  
+!    
+      const-string v0, "OGG"
+  
+      const/4 v1, 0x7
+***************
+*** 1066,1097 ****
+  .end method
+  
+  .method public static isAudioFileType(I)Z
+!     .locals 2
+      .parameter "fileType"
+  
+      .prologue
+      const/4 v0, 0x1
+  
+      if-lt p0, v0, :cond_0
+  
+      const/16 v1, 0xa
+  
+!     if-le p0, v1, :cond_1
+  
+      :cond_0
+      const/16 v1, 0xb
+  
+!     if-lt p0, v1, :cond_2
+  
+      const/16 v1, 0xd
+  
+!     if-gt p0, v1, :cond_2
+  
+      :cond_1
+      :goto_0
+      return v0
+  
+!     :cond_2
+      const/4 v0, 0x0
+  
+      goto :goto_0
+--- 1080,1118 ----
+  .end method
+  
+  .method public static isAudioFileType(I)Z
+!     .locals 3
+      .parameter "fileType"
+  
+      .prologue
++     const/16 v2, 0x3e9
++ 
+      const/4 v0, 0x1
+  
+      if-lt p0, v0, :cond_0
+  
+      const/16 v1, 0xa
+  
+!     if-le p0, v1, :cond_2
+  
+      :cond_0
+      const/16 v1, 0xb
+  
+!     if-lt p0, v1, :cond_1
+  
+      const/16 v1, 0xd
+  
+!     if-le p0, v1, :cond_2
+  
+      :cond_1
++     if-lt p0, v2, :cond_3
++ 
++     if-gt p0, v2, :cond_3
++ 
++     :cond_2
+      :goto_0
+      return v0
+  
+!     :cond_3
+      const/4 v0, 0x0
+  
+      goto :goto_0

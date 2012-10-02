@@ -1,0 +1,19 @@
+*** ./smali/com/android/server/pm/GrantedPermissions.smali	2012-10-01 10:39:57.099302375 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/services.jar.out/./smali/com/android/server/pm/GrantedPermissions.smali	2012-10-01 10:41:28.607299243 +0800
+***************
+*** 91,97 ****
+      .parameter "pkgFlags"
+  
+      .prologue
+!     const v0, 0x20040001
+  
+      and-int/2addr v0, p1
+  
+--- 91,97 ----
+      .parameter "pkgFlags"
+  
+      .prologue
+!     const v0, -0x5ffbffff
+  
+      and-int/2addr v0, p1
+  

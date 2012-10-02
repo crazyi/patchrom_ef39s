@@ -1,0 +1,14 @@
+*** ./smali/android/view/HapticFeedbackConstants.smali	2012-10-01 10:39:24.247303499 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/android/view/HapticFeedbackConstants.smali	2012-10-01 10:40:51.423300515 +0800
+***************
+*** 18,23 ****
+--- 18,26 ----
+  
+  .field public static final VIRTUAL_KEY:I = 0x1
+  
++ .field public static final FLAG_WHEN_ENABLED_EXPLICITLY:I = 0x4
++ 
++ .field public static final VIRTUAL_RELEASED:I = 0x2
+  
+  # direct methods
+  .method private constructor <init>()V

@@ -1,0 +1,19 @@
+*** ./smali/com/android/server/PowerManagerService.smali	2012-10-01 10:39:57.059302375 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/services.jar.out/./smali/com/android/server/PowerManagerService.smali	2012-10-01 10:41:28.551299245 +0800
+***************
+*** 135,141 ****
+  
+  .field private mButtonLight:Lcom/android/server/LightsService$Light;
+  
+! .field private mContext:Landroid/content/Context;
+  
+  .field private mDimDelay:I
+  
+--- 135,141 ----
+  
+  .field private mButtonLight:Lcom/android/server/LightsService$Light;
+  
+! .field mContext:Landroid/content/Context;
+  
+  .field private mDimDelay:I
+  

@@ -1,0 +1,30 @@
+*** ./smali/com/android/internal/widget/multiwaveview/Ease.smali	2012-10-01 10:38:49.079304701 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/com/android/internal/widget/multiwaveview/Ease.smali	2012-10-01 10:40:03.043302171 +0800
+***************
+*** 1,4 ****
+! .class Lcom/android/internal/widget/multiwaveview/Ease;
+  .super Ljava/lang/Object;
+  .source "Ease.java"
+  
+--- 1,4 ----
+! .class public Lcom/android/internal/widget/multiwaveview/Ease;
+  .super Ljava/lang/Object;
+  .source "Ease.java"
+  
+***************
+*** 25,31 ****
+  
+  
+  # direct methods
+! .method constructor <init>()V
+      .locals 0
+  
+      .prologue
+--- 25,31 ----
+  
+  
+  # direct methods
+! .method public constructor <init>()V
+      .locals 0
+  
+      .prologue

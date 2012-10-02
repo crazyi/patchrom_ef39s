@@ -1,0 +1,28 @@
+*** PackageManagerService$PackageHandler.smali	2012-10-01 10:39:57.719302352 +0800
+--- PackageManagerService$PackageHandler.smali	2012-10-01 10:41:29.339299218 +0800
+***************
+*** 177,182 ****
+      check-cast v19, Lcom/android/server/pm/PackageManagerService$HandlerParams;
+  
+      .local v19, params:Lcom/android/server/pm/PackageManagerService$HandlerParams;
+      move-object/from16 v0, p0
+  
+      iget-object v0, v0, Lcom/android/server/pm/PackageManagerService$PackageHandler;->mPendingInstalls:Ljava/util/ArrayList;
+--- 177,193 ----
+      check-cast v19, Lcom/android/server/pm/PackageManagerService$HandlerParams;
+  
+      .local v19, params:Lcom/android/server/pm/PackageManagerService$HandlerParams;
++ 
++     move-object/from16 v0, p0
++ 
++     move-object/from16 v1, v19
++ 
++     invoke-direct {v0, v1}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->checkApk(Lcom/android/server/pm/PackageManagerService$HandlerParams;)Z
++ 
++     move-result v31
++ 
++     if-eqz v31, :cond_0
++     
+      move-object/from16 v0, p0
+  
+      iget-object v0, v0, Lcom/android/server/pm/PackageManagerService$PackageHandler;->mPendingInstalls:Ljava/util/ArrayList;

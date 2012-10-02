@@ -1,0 +1,52 @@
+*** PackageManagerService.smali	2012-10-01 10:39:57.239302370 +0800
+--- PackageManagerService.smali	2012-10-01 10:41:28.747299239 +0800
+***************
+*** 13681,13686 ****
+      .end local v23           #i:I
+      .end local v44           #renamed:Ljava/lang/String;
+      :cond_18
+      move-object/from16 v0, v41
+  
+      iget-object v3, v0, Lcom/android/server/pm/PackageSetting;->origPackage:Lcom/android/server/pm/PackageSettingBase;
+--- 13738,13761 ----
+      .end local v23           #i:I
+      .end local v44           #renamed:Ljava/lang/String;
+      :cond_18
++     move-object/from16 v0, p1
++ 
++     iget-object v3, v0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
++ 
++     iget v4, v3, Landroid/content/pm/ApplicationInfo;->flags:I
++ 
++     move-object/from16 v0, v41
++ 
++     iget v10, v0, Lcom/android/server/pm/PackageSetting;->pkgFlags:I
++ 
++     const/high16 v11, -0x8000
++ 
++     and-int/2addr v10, v11
++ 
++     or-int/2addr v4, v10
++ 
++     iput v4, v3, Landroid/content/pm/ApplicationInfo;->flags:I
++ 
+      move-object/from16 v0, v41
+  
+      iget-object v3, v0, Lcom/android/server/pm/PackageSetting;->origPackage:Lcom/android/server/pm/PackageSettingBase;
+***************
+*** 24222,24228 ****
+  
+      move-result v10
+  
+!     if-nez v10, :cond_5
+  
+      .end local v1           #ai:Landroid/content/pm/ApplicationInfo;
+      .end local v8           #packageName:Ljava/lang/String;
+--- 24412,24418 ----
+  
+      move-result v10
+  
+!     if-eqz v10, :cond_5
+  
+      .end local v1           #ai:Landroid/content/pm/ApplicationInfo;
+      .end local v8           #packageName:Ljava/lang/String;

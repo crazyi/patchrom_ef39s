@@ -1,0 +1,15 @@
+*** ./smali/com/android/internal/telephony/cdma/CDMAPhone.smali	2012-10-01 10:38:52.055304596 +0800
+--- /home/crazyi/android/patchrom/ef39s/temp/new_smali/framework.jar.out/./smali/com/android/internal/telephony/cdma/CDMAPhone.smali	2012-10-01 10:40:07.343302024 +0800
+***************
+*** 1006,1011 ****
+--- 1006,1015 ----
+      .end annotation
+  
+      .prologue
++     const/16 v0, 0xf
++ 
++     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->removeMessages(I)V
++ 
+      iget-object v0, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCT:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
+  
+      invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->acceptCall()V

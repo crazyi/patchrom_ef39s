@@ -1,0 +1,36 @@
+*** ActivityManagerService$2.smali	2012-10-01 10:39:55.527302427 +0800
+--- ActivityManagerService$2.smali	2012-10-01 10:41:26.311299322 +0800
+***************
+*** 177,183 ****
+  
+      move-object/from16 v2, v38
+  
+!     invoke-direct {v0, v3, v1, v2}, Lcom/android/server/am/AppErrorDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;)V
+  
+      .local v20, d:Landroid/app/Dialog;
+      invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+--- 187,193 ----
+  
+      move-object/from16 v2, v38
+  
+!     invoke-direct {v0, v5, v1, v2, v3}, Lcom/android/server/am/AppErrorDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;Landroid/app/ApplicationErrorReport$CrashInfo;)V
+  
+      .local v20, d:Landroid/app/Dialog;
+      invoke-virtual/range {v20 .. v20}, Landroid/app/Dialog;->show()V
+***************
+*** 200,206 ****
+  
+      invoke-virtual {v3}, Lcom/android/server/am/ActivityManagerService;->ensureBootCompleted()V
+  
+!     goto :goto_0
+  
+      :cond_2
+      const/4 v3, 0x0
+--- 210,216 ----
+  
+      invoke-virtual {v3}, Lcom/android/server/am/ActivityManagerService;->ensureBootCompleted()V
+  
+!     goto/16 :goto_0
+  
+      :cond_2
+      const/4 v3, 0x0

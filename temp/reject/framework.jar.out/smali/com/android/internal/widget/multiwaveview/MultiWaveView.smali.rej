@@ -1,0 +1,79 @@
+*** MultiWaveView.smali	2012-10-01 10:38:48.999304703 +0800
+--- MultiWaveView.smali	2012-10-01 10:40:02.951302176 +0800
+***************
+*** 89,125 ****
+  
+  .field private mDirectionDescriptionsResourceId:I
+  
+! .field private mDragging:Z
+  
+! .field private mFeedbackCount:I
+  
+  .field private mGrabbedState:I
+  
+! .field private mHandleAnimation:Lcom/android/internal/widget/multiwaveview/Tweener;
+  
+! .field private mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+  
+! .field private mHitRadius:F
+  
+! .field private mHorizontalOffset:F
+  
+! .field private mNewTargetResources:I
+  
+  .field private mOnTriggerListener:Lcom/android/internal/widget/multiwaveview/MultiWaveView$OnTriggerListener;
+  
+! .field private mOuterRadius:F
+  
+! .field private mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+  
+! .field private mResetListener:Landroid/animation/Animator$AnimatorListener;
+  
+! .field private mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
+  
+! .field private mSnapMargin:F
+  
+  .field private mTapRadius:F
+  
+! .field private mTargetAnimations:Ljava/util/ArrayList;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Ljava/util/ArrayList",
+--- 89,125 ----
+  
+  .field private mDirectionDescriptionsResourceId:I
+  
+! .field mDragging:Z
+  
+! .field mFeedbackCount:I
+  
+  .field private mGrabbedState:I
+  
+! .field mHandleAnimation:Lcom/android/internal/widget/multiwaveview/Tweener;
+  
+! .field mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+  
+! .field mHitRadius:F
+  
+! .field mHorizontalOffset:F
+  
+! .field mNewTargetResources:I
+  
+  .field private mOnTriggerListener:Lcom/android/internal/widget/multiwaveview/MultiWaveView$OnTriggerListener;
+  
+! .field mOuterRadius:F
+  
+! .field mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+  
+! .field mResetListener:Landroid/animation/Animator$AnimatorListener;
+  
+! .field mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
+  
+! .field mSnapMargin:F
+  
+  .field private mTapRadius:F
+  
+! .field mTargetAnimations:Ljava/util/ArrayList;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Ljava/util/ArrayList",
