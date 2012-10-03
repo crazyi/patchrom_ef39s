@@ -447,6 +447,8 @@
 
 .field mVirtualKeyVibePattern:[J
 
+.field mVolumeDownKeyConsumedByScreenshotChord:Z
+
 .field mVolBtnMusicControls:Z
 
 .field private mVolumeDownKeyConsumedByChord:Z
@@ -5952,11 +5954,11 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerManager:Landroid/os/LocalPowerManager;
 
     .line 956
-    new-instance v11, Lcom/android/internal/policy/impl/KeyguardViewMediator;
-
     move-object/from16 v0, p4
 
-    invoke-direct {v11, p1, p0, v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/os/LocalPowerManager;)V
+    invoke-static {p1, p0, v0}, Lcom/android/internal/policy/impl/MiuiClassFactory;->createKeyguardViewMediator(Landroid/content/Context;Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/os/LocalPowerManager;)Lcom/android/internal/policy/impl/KeyguardViewMediator;
+  
+    move-result-object v11
 
     iput-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
@@ -8476,7 +8478,6 @@
     .line 3029
     .restart local v7       #keyguardActive:Z
     :cond_4
-
     and-int/lit16 v10, p2, 0x100
 
     if-eqz v10, :cond_5
@@ -8696,7 +8697,7 @@
     .end local v3           #hungUp:Z
     .end local v9           #telephonyService:Lcom/android/internal/telephony/ITelephony;
     :cond_f
-    invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyUp(Z)Z
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyUp(Z)Z
 
     move-result v10
 
@@ -9215,7 +9216,7 @@
     const/4 v10, 0x1
 
     :goto_d
-    invoke-direct {p0, v10}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyUp(Z)Z
+    invoke-virtual {p0, v10}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyUp(Z)Z
 
     move-result v10
 

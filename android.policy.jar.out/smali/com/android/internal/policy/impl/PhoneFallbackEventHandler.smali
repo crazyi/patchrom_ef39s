@@ -738,12 +738,10 @@
 
     if-nez v4, :cond_2
 
-    .line 239
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->startCallActivity()V
 
     goto :goto_0
 
-    .line 192
 
     :sswitch_data_0
     .sparse-switch

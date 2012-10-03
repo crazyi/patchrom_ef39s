@@ -273,35 +273,31 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 289
     array-length v3, p1
 
     add-int/lit8 v1, v3, -0xe
 
-    .line 291
     .local v1, footerOffset:I
     aget-byte v3, p1, v1
 
     and-int/lit16 v2, v3, 0xff
 
-    .line 293
     .local v2, numberLength:I
+    goto :cond_0
+
     const/16 v3, 0xb
 
     if-le v2, v3, :cond_0
 
-    .line 295
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 320
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
     :goto_0
     return-void
 
-    .line 306
     .restart local v1       #footerOffset:I
     .restart local v2       #numberLength:I
     :cond_0
@@ -665,18 +661,9 @@
 
     if-nez v5, :cond_1
 
-    .line 240
     iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    invoke-static {v5}, Lcom/android/internal/telephony/GsmAlphabet;->stringToGsm8BitPacked(Ljava/lang/String;)[B
-
-    move-result-object v2
-
-    .line 241
-    .local v2, byteTag:[B
-    array-length v5, v2
-
-    invoke-static {v2, v9, v0, v9, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v5, v3}, Lcom/android/internal/telephony/MiuiAdnUtils;->encodeAlphaTag([BLjava/lang/String;I)Z
 
     goto :goto_1
 .end method

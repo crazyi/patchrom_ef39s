@@ -141,7 +141,7 @@
 
 .field private mButtonLight:Lcom/android/server/LightsService$Light;
 
-.field private mContext:Landroid/content/Context;
+.field mContext:Landroid/content/Context;
 
 .field private mCustomButtonValues:[I
 

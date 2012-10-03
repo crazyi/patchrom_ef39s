@@ -96,7 +96,9 @@
     .prologue
     const/4 v4, 0x1
 
-    const/4 v3, 0x0
+    invoke-static {p0}, Landroid/app/ExtraActivityManager;->isHighEndGfx(Landroid/view/Display;)Z
+
+    move-result v3
 
     .line 223
     const-string/jumbo v5, "ro.config.disable_hw_accel"

@@ -53,6 +53,7 @@
 .field private mWatchingForMenu:Z
 
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindow;
+
 .field private mRoundedCorners:Lcom/android/internal/policy/impl/RoundedCorners;
 
 
